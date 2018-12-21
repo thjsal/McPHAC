@@ -68,7 +68,7 @@ int ANIST;  // Whether or not to treat Thomson scattering anisotropically (shoul
 			      // only a fraction DTFRAC of the computed temperature correction will be applied in this and future iterations
 #define DTFRAC  0.5  // Fraction of computed temperature correction to apply once MAXTCHANGERATIO criterion is met
 #define MESSAGES  1  // Whether or not to print messages to stderr
-#define OUTPUT  1  // Whether or not to output the radiative field to (big) files
+#define OUTPUT  0 //1  // Whether or not to output the radiative field to (big) files
 #define USEMAXT    0  // Whether or not to use the ideal gas law for temperatures beyond MAXT
 
 

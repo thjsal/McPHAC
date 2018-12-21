@@ -156,7 +156,8 @@ int main( int argc, char *argv[] ) {
 				fprintf(fp, "#y mu nu tau P     P y mu nu tau\n");
 
 				// File for outputting I at surface
-				sprintf(filename,"OUT/EmergentSpectrum.%d.%d.dat", ndepthsnu, iteration);
+				//sprintf(filename,"OUT/EmergentSpectrum.%d.%d.dat", ndepthsnu, iteration);
+				sprintf(filename,"OUT/EmergentSpectrum_l%.1f_lgg%.1f_iter%d.dat", log10(TEFF), log10(GSURFACE),iteration);
 				fp8 = fopen(filename, "w");
 				fprintf(fp8, "#nu mu I\n");
 
