@@ -7,7 +7,7 @@ GSURFACE=$(echo "e($LOGG*l(10))" | bc -l)
 
 # Physical Parameters
 #LOGTEFF=6.0 #5.9 #6.0 #6.30102999566 #6.5   # Log Target effective temperature, K
-LOGTEFFS=(5.5 5.6 5.7 5.8 5.9 6.0 6.1 6.2 6.3 6.4 6.5 6.6) 
+LOGTEFFS=(6.5) #(5.5 5.6 5.7 5.8 5.9 6.0 6.1 6.2 6.3 6.4 6.5 6.6) 
 RUNN=${#LOGTEFFS[@]} #12
 echo "Run McPhac for this many Teffs:"
 echo $RUNN
@@ -29,9 +29,9 @@ echo $RUNN
 ##exit
 
 # Computational parameters
-MINCOL=-9.0 # Min. log(y) considered for Teff<10^6.5K
+#MINCOL=-9.0 # Min. log(y) considered for Teff<10^6.5K
 #MAXCOL=2.0 # Initial max. log(y), increased if necessary to meet MAXTAUTAU criterion
-#MINCOL=-5.0 # Min. log(y) considered for Teff=10^6.5K
+MINCOL=-5.0 # Min. log(y) considered for Teff=10^6.5K
 MAXCOL=3.0 #4.0 #2.0 # Initial max. log(y), increased if necessary to meet MAXTAUTAU criterion
 #MINCOL=-8.0 # Min. log(y) considered in Z96 for Teff=10^5.3K
 #MAXCOL=-0.6 # Max. log(y) considered in Z96 for Teff=10^5.3K (set MAXCOLTAU=0.01 to keep unchanged)
@@ -59,7 +59,7 @@ NFREQ=360 #1000 #100     # Number of photon frequency bins
 MAXFRACTEMPCHANGE=0.000001 #0.0001  # Continue iteration until max. fractional temp. change < MAXFRACTEMPCHANGE
 MAXITER=20 # Maximum number of iterations allowed
 
-ANIST=1 #0  # Whether or not to treat Thomson scattering anisotropically (should only be set if FEAUTRIER is)
+ANIST=0 #1 #0  # Whether or not to treat Thomson scattering anisotropically (should only be set if FEAUTRIER is)
 
 for ((i=0;i<=RUNN;i++));do
 	echo ${GSURFACES[9]}

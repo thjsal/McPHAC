@@ -6,7 +6,7 @@ void OutputSpectrum(column_type *c, FILE *fp, int knu, double *nu, int k, double
 	int j;
 
 	for (j=0; j<nmu; j++){
-		fprintf(fp, "%9.4e %9.2e %11.4e\n", nu[k], mu[j], 2.0*c[0].u[j][knu]);
+		fprintf(fp, "%9.8e %9.8e %11.8e\n", nu[k], mu[j], 2.0*c[0].u[j][knu]);
 	}
 	fprintf(fp, "\n\n");
 }

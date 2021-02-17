@@ -49,7 +49,7 @@ int ANIST;  // Whether or not to treat Thomson scattering anisotropically (shoul
 
 
 // Options that may be used in further development (some only partially implemented)
-#define FREQKT  1   // Whether or not to give the max and min frequencies as fractions of k*Teff (fixed range otherwise)
+#define FREQKT  0 //1   // Whether or not to give the max and min frequencies as fractions of k*Teff (fixed range otherwise)
 #define USEBLAS  1  // Whether or not to use Basic Linear Algebra Subprograms for matrix multiplication
 #define USELAPACK  1  // Whether or not to use Linear Algebra PACKage routines (needed for matrix inversion)
 #define USEINTERPOL  1  // Whether or not to use different depth points in the radiative transfer calculation
@@ -73,8 +73,8 @@ int ANIST;  // Whether or not to treat Thomson scattering anisotropically (shoul
 
 
 // Parameters pertaining to options that may be used in further development
-#define  MINFREQ  15.4  // Minimum log(nu) to consider if FREQKT is not set (0.01 keV)
-#define  MAXFREQ  18.4  // Maximum log(nu) to consider if FREQKT is not set (10 keV)
+#define  MINFREQ  14.0 //15.4  // Minimum log(nu) to consider if FREQKT is not set (0.01 keV) //TS changed
+#define  MAXFREQ  18.7 //18.4  // Maximum log(nu) to consider if FREQKT is not set (10 keV)
 #define  MAXT    5e7  // If USEMAXT is set, the ideal gas law is used for temperatures larger than MAXT
 
 

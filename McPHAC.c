@@ -76,6 +76,7 @@ int main( int argc, char *argv[] ) {
 	minfreq = (FREQKT) ? log10(MINFREQKT*KBOLTZMAN*HZPER1KEVPHOTON/ERGSPERKEV*TEFF) : MINFREQ;
 	maxfreq = (FREQKT) ? log10(MAXFREQKT*KBOLTZMAN*HZPER1KEVPHOTON/ERGSPERKEV*TEFF) : MAXFREQ;
 	dlognu = (maxfreq-minfreq)/(1.0*NFREQ); // Taking frequency values to be the centers of log spaced bins
+	//dlognu = (maxfreq-minfreq)/(1.0*NFREQ-1.0); // Taking frequency values to be the centers of log spaced bins
 
 	ionekev = 0;
 	for (k=0; k<NFREQ; k++) { // Find k corresponding to 1 keV photon
@@ -84,6 +85,7 @@ int main( int argc, char *argv[] ) {
 		if (nu[k]<HZPER1KEVPHOTON) {
 			ionekev = k;
 		}
+		//printf("%e\n",nu[k]);
 		dnu[k] = nu[k]*dlognu*LNTEN;
 	}
 
